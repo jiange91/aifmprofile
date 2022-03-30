@@ -32,7 +32,7 @@ for i in range(0, params.n):
     n.disk_image = 'urn:publicid:IDN+emulab.net+image+emulab-ops//UBUNTU18-64-STD'
 
     intf = n.addInterface('interface-%d' % i, pg.IPv4Address('192.168.6.%d' % (i + 1),'255.255.255.0'))
-    n.addService(pg.Execute(shell="sh", command="sudo -H bash /local/repository/expssh.sh"))
+    n.addService(pg.Execute(shell="sh", command="sudo bash /local/repository/expssh.sh"))
     nodes.append(n)
     ifaces.append(intf)
 
